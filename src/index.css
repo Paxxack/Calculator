@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -105,10 +109,21 @@ button:active {
   color: black;
 }
 
-.delete-icon {
-  width: 46%;
+.DEL-icon {
+  width: 55%;
   position: absolute;
-  top: 29%;
-  left: 23.5%;
+  top: 26.5%;
+  left: 21%;
+}
+
+.DEL-btn {
+  background-color: #9f9f9f;
+  border-radius: 100%;
+  width: 3.5rem;
+  position: relative;
+}
+
+.delete-btn:active {
+  border: solid 2px rgb(88, 88, 88);
 }
 /*#endregion MAIN CONTENT */
