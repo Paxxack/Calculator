@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function DisplayButton({ each }) {
-  const { id, classes, value, img } = each;
+  const { id, classes, value, setUserInput } = each;
   let stringNames = "";
 
   for (let i = 0; i < classes.length; i++) {
@@ -12,6 +12,7 @@ export default function DisplayButton({ each }) {
   }
 
   function handleClick(e) {
+    setUserInput(e.target.value);
     console.log(e.target.id);
   }
 

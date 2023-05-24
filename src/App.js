@@ -1,12 +1,12 @@
 import buttonData from "./buttonData";
-import DisplayButton from "./DisplayButton";
-import React from "react";
+import DisplayButton from "./Components/DisplayButton";
+import React, { useState } from "react";
 
 function App() {
-  console.log(buttonData);
+  const [userInput, setUserInput] = useState("");
 
   const buttonsDisplay = buttonData.map((each, id) => {
-    return <DisplayButton each={each} key={id} />;
+    return <DisplayButton each={each} key={id} setUserInput={setUserInput} />;
   });
 
   console.log(buttonsDisplay);
@@ -14,7 +14,11 @@ function App() {
     <div className="App" id="grad">
       <div className="phone-container">
         <div className="field user-history">32345</div>
-        <div className="field user-entries">543</div>
+        <input
+          readOnly
+          value={userInput}
+          className="field user-entries"
+        ></input>
         <img
           className="iphone-img"
           src="./calculator.png"
