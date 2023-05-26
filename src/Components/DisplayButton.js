@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function DisplayButton({ each }) {
-  const { id, classes, value, setUserInput } = each;
+export default function DisplayButton({ each, setUserInput, userInput }) {
+  const { id, classes, value } = each;
   let stringNames = "";
 
   for (let i = 0; i < classes.length; i++) {
@@ -11,9 +11,35 @@ export default function DisplayButton({ each }) {
     stringNames += ` ${classes[i]}`;
   }
 
-  function handleClick(e) {
-    setUserInput(e.target.value);
-    console.log(e.target.id);
+  function handleClick() {
+    if (
+      value === "0" ||
+      "1" ||
+      "2" ||
+      "3" ||
+      "4" ||
+      "5" ||
+      "6" ||
+      "7" ||
+      "8" ||
+      "9"
+    ) {
+      numberClicked();
+    } else if (value === "/" || "*" || "-" || "+") {
+      operatorClicked();
+    }
+  }
+
+  //NEED TO DO THE CUSTOM HOOK FOR DISPLAYBUTTON LOGIC BECAUSE IT BECOMING A REAL MESS RIGHT NOW
+
+  function operatorClicked() {}
+
+  function numberClicked() {
+    if (userInput === "0") {
+      setUserInput(value);
+    } else {
+      setUserInput((prevValue) => (prevValue += value));
+    }
   }
 
   function checkName() {

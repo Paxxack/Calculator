@@ -38,6 +38,8 @@ code {
   color: white;
   direction: rtl;
   width: 245px;
+  background-color: black;
+  border: none;
 }
 
 .user-history {
