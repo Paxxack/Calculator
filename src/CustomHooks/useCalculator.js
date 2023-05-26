@@ -1,0 +1,3 @@
+function useCalculator() {
+  return;
+}
